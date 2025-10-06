@@ -1,0 +1,26 @@
+.ExplorMenu{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.ExplorMenu h1{
+    color: var(--dark_gray);
+    font-weight: 500;
+}
+.ExplorMenu_text{
+    max-width: 60%;
+    columns: #808080;
+}
+
+.Explore_menu_list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    margin:20px 0px;
+    overflow-x: scroll;
+}
+.Explore_menu_list ::-webkit-scrollbar{
+    display: none;
+}

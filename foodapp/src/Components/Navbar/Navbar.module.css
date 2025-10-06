@@ -1,0 +1,63 @@
+.Navbar{
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+ 
+    width: 150px;
+
+}
+.navbar_memu{
+    display: flex;
+     list-style: none;
+     gap: 20px;
+     color: var(--bluish-gray);
+     font-size: var(--Font18);
+}
+
+.navbar_right{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.Navbar button{
+    background-color: transparent;
+    font-size: var(--Font16);
+    color : var(--bluish-gray);
+    border: 1px solid var(--tomato);
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.Navbar button:hover{
+    background-color: var( --Soft_pink_white);
+}
+
+.active{
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--bluish-gray);
+}
+
+.Navbar li{
+  cursor: pointer;
+   transition: border-bottom 0.1s ease;
+
+}
+.NavbarSearchIcon{
+    position:relative;
+
+}
+.NavbarSearchIcon .dot{
+    position: absolute;
+    min-height: 10px;
+    min-width: 10px;
+    background-color: var(--tomato);
+    border-radius: 5px;
+    top:-8px;
+    right: -8px;
+}
