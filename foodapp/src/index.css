@@ -24,7 +24,13 @@ a{
   --White : white;
   --gray : #747474;
   --dark_gray : #262626;
-
+  --m_gray : #676767;
+  --black: #00000018;
+  
   --Font18 : 18px;
   --Font16 : 16px;
+  --font12 : 12px;
 }
+
+
+

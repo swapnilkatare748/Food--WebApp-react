@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './ExplorMenu.module.css';
- import { menu_list } from '../../assets/frontend_assets/assets';
+ import { menu_list } from '../../assets/frontend_assets/assets.js';
 
-function ExplorMenu() {
+function ExplorMenu({Category,setCategory}) {
   return (
     <div className={styles.ExplorMenu}>
       <h1>Explore our menu </h1>
@@ -10,10 +10,12 @@ function ExplorMenu() {
       <div className={styles.Explore_menu_list}>
          {
             menu_list.map((item,index)=>{
-              <div key={index} className="explore_menu_list_item">
-                  <img src={item.menu_image} alt=""/>
-                   <p>{item.menu_name}</p>
-              </div>
+               return (
+                  <div onClick={()=>setCategory(prev => prev === item.menu_name?"All":item.menu_name)} key={index} className={styles.explore_menu_list_item}>
+                  <img src={item.menu_image} className={Category === item.menu_name ? styles.active : ""} alt="This is images" />
+                  <p> {item.menu_name} </p>
+                  </div>
+               );
             })
          }
       </div>
