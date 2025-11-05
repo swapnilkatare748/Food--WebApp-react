@@ -1,28 +1,29 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styles from "./Fooditem.module.css";
 import { assets } from '../../assets/frontend_assets/assets';
+import { StoreContext } from '../../context/storedContaxt';
 
 
 function Fooditem({ id, name, price, description, image }) {
 
 
-  const [itemConst,setItemConut] = useState(0);
+  const { cartItem, addToCart, removeFormCart } = useContext(StoreContext);
 
   return (
     <div className={styles.FoodItem}>
       <div className={styles.Food_item_container}>
         <img src={image} alt="image1" className={styles.FoodItemImage} />
-        {!itemConst ? (
+        {!cartItem[id] ? (
           <img
             className={styles.add}
-            onClick={() => setItemConut((prev) => prev + 1)}
+            onClick={ ()=>addToCart(id)}
             src={assets.add_icon_white}
           />
         ) : (
           <div className={styles.food_item_counter}>
-            <img  onClick={()=>setItemConut(prev=>prev-1)} src={assets.remove_icon_red} alt="" />
-            <p>{itemConst}</p>
-            <img  onClick={()=>setItemConut(prev=>prev+1)} src={assets.add_icon_green} alt="" />
+            <img  onClick={()=>removeFormCart(id)} src={assets.remove_icon_red} alt="" />
+            <p>{cartItem[id]}</p>
+            <img  onClick={()=>addToCart(id)} src={assets.add_icon_green} alt="" />
           </div>
         )}
       </div>

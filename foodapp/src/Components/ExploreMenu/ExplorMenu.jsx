@@ -4,7 +4,7 @@ import styles from './ExplorMenu.module.css';
 
 function ExplorMenu({Category,setCategory}) {
   return (
-    <div className={styles.ExplorMenu}>
+    <div className={styles.ExplorMenu} id='explore_menu'>
       <h1>Explore our menu </h1>
       <p className={styles.ExplorMenu_text}>Chose from a diverse munu featuring a delectable array of dishes . Our mission is to start enw item and food.</p>
       <div className={styles.Explore_menu_list}>

@@ -5,6 +5,7 @@
   margin:0;
   box-sizing: border-box;
   font-family: Outfit;
+  scroll-behavior: smooth;
 }
 
 body{
@@ -26,7 +27,6 @@ a{
   --dark_gray : #262626;
   --m_gray : #676767;
   --black: #00000018;
-  
   --Font18 : 18px;
   --Font16 : 16px;
   --font12 : 12px;

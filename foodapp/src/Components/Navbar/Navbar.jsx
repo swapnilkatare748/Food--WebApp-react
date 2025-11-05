@@ -1,48 +1,60 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './Navbar.module.css';
 import { assets } from '../../assets/frontend_assets/assets.js'
+import {Link} from 'react-router-dom';
+import { StoreContext } from '../../context/storedContaxt.jsx';
 
-function Navbar() {
-
-  const [menu,setMenu] = useState("Home");
+function Navbar({ setShowLogin }) {
+  const [menu, setMenu] = useState("Home");
+  const { GetTotoleCartAmount } = useContext(StoreContext);
 
   return (
     <div className={styles.Navbar}>
-      <img src={assets.logo} className={styles.logo} alt="logo" />
+      <Link to="/">
+        <img src={assets.logo} className={styles.logo} alt="logo" />
+      </Link>
       <ul className={styles.navbar_memu}>
-        <li
+        <Link
+          to="/"
           onClick={() => setMenu("Home")}
           className={menu === "Home" ? styles.active : ""}
         >
           Home
-        </li>
-        <li
+        </Link>
+        <a
+          href="#explore_menu"
           onClick={() => setMenu("Menu")}
           className={menu === "Menu" ? styles.active : ""}
         >
           Menu
-        </li>
-        <li
+        </a>
+        <a
+          href="#AppDownload"
           onClick={() => setMenu("mobile-app")}
           className={menu === "mobile-app" ? styles.active : ""}
         >
           Mobile-App
-        </li>
-        <li
+        </a>
+        <a
+          href="#footer"
           onClick={() => setMenu("contact-us")}
           className={menu === "contact-us" ? styles.active : ""}
         >
           Contact Us
-        </li>
+        </a>
       </ul>
 
       <div className={styles.navbar_right}>
         <img src={assets.search_icon} alt="serarch icon" />
         <div className={styles.NavbarSearchIcon}>
-          <img src={assets.basket_icon} alt="basket icon" />
-          <div className={styles.dot}></div>
+          <Link to="/cart">
+            <img src={assets.basket_icon} alt="basket icon" />
+            <div
+              className={GetTotoleCartAmount() === 0 ? "" : styles.dot}
+            ></div>
+          </Link>
         </div>
-        <button>Sign in</button>
+        <button onClick={() => setShowLogin(true)}>Sign in</button>
       </div>
     </div>
   );

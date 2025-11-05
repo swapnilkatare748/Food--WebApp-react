@@ -50,3 +50,25 @@
     cursor: pointer;
 }
 
+@media (max-width:1015px) {
+   
+    .heder_contents{
+      max-width: 45%;
+    }
+}
+
+
+
+@media (max-width:750px) {
+    .heder_contents{
+      max-width: 65%;
+    }
+    .heder_contents p{
+      display: none;
+    }
+    .heder_contents button{
+      padding: 2vw 4vw;
+      padding: 2px;
+    }
+
+}
