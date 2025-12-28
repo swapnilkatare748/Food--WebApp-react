@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Vinyl&display=swap'); */
 
 *{
   padding: 0;
@@ -17,6 +18,11 @@ a{
   color: inherit;
   
 }
+hr{
+  border: none;
+  height: 1px;
+  background-color: #a9a9a9;
+}
 
 :root{
   --bluish-gray : #495579;
@@ -24,6 +30,7 @@ a{
   --Soft_pink_white : #fff4f2;
   --White : white;
   --gray : #747474;
+  --border:#a9a9a9;
   --dark_gray : #262626;
   --m_gray : #676767;
   --black: #00000018;
